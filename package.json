@@ -1,0 +1,62 @@
+{
+  "name": "@kgryte/travis-yml",
+  "version": "0.0.0",
+  "description": "Creates a .travis.yml file.",
+  "author": {
+    "name": "Athan Reines",
+    "email": "kgryte@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Athan Reines",
+      "email": "kgryte@gmail.com"
+    }
+  ],
+  "bin": {
+    "travisyml": "./bin/cli"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "test-cov": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coverage -- -R spec",
+    "coveralls": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --dir ./reports/coveralls/coverage --report lcovonly -- -R spec && cat ./reports/coveralls/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./reports/coveralls"
+  },
+  "main": "./lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kgryte/travis-yml.git"
+  },
+  "keywords": [
+    "utilities",
+    "utils",
+    "utility",
+    "travis.yml",
+    "dotfile",
+    "cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/kgryte/travis-yml/issues"
+  },
+  "dependencies": {
+    "@kgryte/noop": "^1.0.0",
+    "minimist": "^1.1.2",
+    "mustache": "^2.1.3",
+    "pkginfo": "^0.3.0",
+    "utils-merge2": "^1.0.0",
+    "validate.io-contains": "^1.0.0",
+    "validate.io-function": "^1.0.2",
+    "validate.io-object": "^1.0.4",
+    "validate.io-string-array": "^1.0.0",
+    "validate.io-string-primitive": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "3.x.x",
+    "coveralls": "^2.11.1",
+    "istanbul": "^0.3.0",
+    "jshint": "2.x.x",
+    "jshint-stylish": "2.x.x",
+    "mkdirp": "^0.5.1",
+    "mocha": "2.x.x",
+    "proxyquire": "^1.6.0"
+  },
+  "license": "MIT"
+}
