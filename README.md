@@ -75,6 +75,7 @@ The function accepts the same `options` as the asynchronous version.
 ## Notes
 
 * 	Supported templates may be found in the `./lib` directory and are named according to the directory name.
+*	Default `options` for each template are located in the `./lib` directory in the file named `defaults.json`.
 
 
 ## Examples
