@@ -125,7 +125,7 @@ Options:
 
   -h,    --help                Print this message.
   -V,    --version             Print the package version.
-  -tmpl  --template [name]     Template name. Default: 'default'.
+  -tmpl  --template [name]     Template name. Default: 'nodejs'.
          --versions            Language versions; e.g., 0.12,0.11,...,iojs.
 ```
 
