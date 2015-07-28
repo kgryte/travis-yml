@@ -1,6 +1,6 @@
 {
   "name": "@kgryte/travis-yml",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a .travis.yml file.",
   "author": {
     "name": "Athan Reines",
