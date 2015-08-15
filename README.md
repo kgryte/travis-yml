@@ -51,7 +51,6 @@ To specify particular language versions against which to build, set the `version
 cp( 'path/to/a/directory', {
 	'versions': [
 		'0.12',
-		'0.11',
 		'0.10',
 		'0.8',
 		'iojs'

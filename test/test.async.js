@@ -5,22 +5,11 @@ var mpath = './../lib/async.js';
 
 // MODULES //
 
-var // Expectation library:
-	chai = require( 'chai' ),
-
-	// Recursively make directories:
+var chai = require( 'chai' ),
 	mkdirp = require( 'mkdirp' ),
-
-	// Path module:
 	path = require( 'path' ),
-
-	// Filesystem module:
 	fs = require( 'fs' ),
-
-	// Module to proxy required modules:
 	proxyquire = require( 'proxyquire' ),
-
-	// Module to be tested:
 	cp = require( mpath );
 
 
