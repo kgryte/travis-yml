@@ -176,7 +176,7 @@ describe( 'async', function tests() {
 		}
 	});
 
-	it( 'should create a .travis.yml file in a specified directory', function test() {
+	it( 'should create a .travis.yml file in a specified directory', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -185,17 +185,19 @@ describe( 'async', function tests() {
 		cp( dirpath, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
-			}
-			var bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
 
-			assert.isTrue( bool );
+				assert.isTrue( bool );
+			}
+			done();
 		}
 	});
 
-	it( 'should pass any read errors to a provided callback', function test() {
+	it( 'should pass any read errors to a provided callback', function test( done ) {
 		var dirpath,
 			cp;
 
@@ -214,13 +216,14 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			if ( error ) {
 				assert.ok( true );
-				return;
+			} else {
+				assert.ok( false );
 			}
-			assert.ok( false );
+			done();
 		}
 	});
 
-	it( 'should pass any write errors to a provided callback', function test() {
+	it( 'should pass any write errors to a provided callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -230,13 +233,14 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			if ( error ) {
 				assert.ok( true );
-				return;
+			} else {
+				assert.ok( false );
 			}
-			assert.ok( false );
+			done();
 		}
 	});
 
-	it( 'should create a .travis.yml file in a specified directory without requiring a callback', function test() {
+	it( 'should create a .travis.yml file in a specified directory without requiring a callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -250,10 +254,11 @@ describe( 'async', function tests() {
 			var bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
 
 			assert.isTrue( bool );
+			done();
 		}
 	});
 
-	it( 'should create a .travis.yml file using a specified template', function test() {
+	it( 'should create a .travis.yml file using a specified template', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -267,15 +272,16 @@ describe( 'async', function tests() {
 			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
-			}
-			bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
 
-			assert.isTrue( bool );
+				assert.isTrue( bool );
+			}
+			done();
 		}
 	});
 
-	it( 'should create a .travis.yml file having specified versions', function test() {
+	it( 'should create a .travis.yml file having specified versions', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -296,6 +302,7 @@ describe( 'async', function tests() {
 
 			if ( error ) {
 				assert.ok( false );
+				done();
 				return;
 			}
 			fpath1 = path.join( dirpath, '.travis.yml' );
@@ -309,10 +316,11 @@ describe( 'async', function tests() {
 			});
 
 			assert.strictEqual( f1, f2 );
+			done();
 		}
 	});
 
-	it( 'should ignore any unrecognized options', function test() {
+	it( 'should ignore any unrecognized options', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -323,13 +331,15 @@ describe( 'async', function tests() {
 		}, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
-			}
-			var bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.travis.yml' ) );
 
-			assert.isTrue( bool );
+				assert.isTrue( bool );
+			}
+			done();
 		}
 	});
 
