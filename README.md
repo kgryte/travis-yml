@@ -1,6 +1,6 @@
 .travis.yml
 =========
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][build-image]][build-url] [![Coverage Status][coverage-image]][coverage-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a `.travis.yml` file.
 
@@ -50,6 +50,7 @@ To specify particular language versions against which to build, set the `version
 ``` javascript
 cp( 'path/to/a/directory', {
 	'versions': [
+		'stable',
 		'5',
 		'4',
 		'0.12',
@@ -196,11 +197,11 @@ Copyright &copy; 2015. Athan Reines.
 [npm-image]: http://img.shields.io/npm/v/@kgryte/travis-yml.svg
 [npm-url]: https://npmjs.org/package/@kgryte/travis-yml
 
-[travis-image]: http://img.shields.io/travis/kgryte/travis-yml/master.svg
-[travis-url]: https://travis-ci.org/kgryte/travis-yml
+[build-image]: http://img.shields.io/travis/kgryte/travis-yml/master.svg
+[build-url]: https://travis-ci.org/kgryte/travis-yml
 
-[codecov-image]: https://img.shields.io/codecov/c/github/kgryte/travis-yml/master.svg
-[codecov-url]: https://codecov.io/github/kgryte/travis-yml?branch=master
+[coverage-image]: https://img.shields.io/codecov/c/github/kgryte/travis-yml/master.svg
+[coverage-url]: https://codecov.io/github/kgryte/travis-yml?branch=master
 
 [dependencies-image]: http://img.shields.io/david/kgryte/travis-yml.svg
 [dependencies-url]: https://david-dm.org/kgryte/travis-yml
