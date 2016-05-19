@@ -180,8 +180,9 @@ describe( 'sync', function tests() {
 		cp( dirpath, {
 			'template': 'nodejs',
 			'versions': [
+				'4',
 				'0.12',
-				'iojs'
+				'0.10'
 			]
 		});
 

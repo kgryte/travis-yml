@@ -1,10 +1,19 @@
+# After changing this file, check it on:
+#   http://lint.travis-ci.org/
 language: node_js
+
+# Is `sudo` required? If not, jobs are run on container-based infrastructure.
+sudo: false
+
 node_js:
   {{#versions}}
   - '{{.}}'
   {{/versions}}
+
 before_install:
+  # Update the npm client. Older clients cannot, e.g., handle scoped modules.
   - npm update -g npm
+
 after_script:
   - npm run coverage
 

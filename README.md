@@ -50,7 +50,8 @@ To specify particular language versions against which to build, set the `version
 ``` javascript
 cp( 'path/to/a/directory', {
 	'versions': [
-		'stable',
+		'node',
+		'6',
 		'5',
 		'4',
 		'0.12',
@@ -128,7 +129,7 @@ Options:
   -h,    --help                Print this message.
   -V,    --version             Print the package version.
   -tmpl  --template [name]     Template name. Default: 'nodejs'.
-         --versions            Language versions; e.g., 5,4,0.12,...,iojs.
+         --versions            Language versions; e.g., 6,5,4,0.12,...,iojs.
 ```
 
 
@@ -191,7 +192,7 @@ $ make view-cov
 
 ## Copyright
 
-Copyright &copy; 2015. Athan Reines.
+Copyright &copy; 2015-2016. Athan Reines.
 
 
 [npm-image]: http://img.shields.io/npm/v/@kgryte/travis-yml.svg
